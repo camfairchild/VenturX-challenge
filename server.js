@@ -14,8 +14,7 @@ app.use("/greetings", greetings);
 
 // 404 - runs if path isn't in routes
 app.use(function(req, res, next) {
-    res.status(404);
-    res.send('404: Not Found');
+    res.status(404).send("ERROR: 404 Not Found");
 });
 
 // Don't call listen when testing

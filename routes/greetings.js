@@ -17,10 +17,46 @@ router.route("/:name")
     let name = req.params.name;
 
     if (!req.params || !req.params.name) {
-        res.send("ERROR: No name was passed!")
+        res.status(200);
+        res.format({
+            'text/plain': function () {
+              res.send("ERROR: No name was passed!")
+            },
+          
+            'text/html': function () {
+              res.send("<p>ERROR: No name was passed!</p>")
+            },
+          
+            'application/json': function () {
+              res.send({ "error": "No name was passed!" })
+            },
+          
+            default: function () {
+              // respond with 406
+              res.status(406).send('Not Acceptable')
+            }
+        });
     } else {
         let message = `Hello, ${name}!`;
-        res.send(message);
+        res.status(200);
+        res.format({
+            'text/plain': function () {
+              res.send(message)
+            },
+          
+            'text/html': function () {
+              res.send(`<p>${message}</p>`)
+            },
+          
+            'application/json': function () {
+              res.send({ "message": message })
+            },
+          
+            default: function () {
+              // respond with 406
+              res.status(406).send('Not Acceptable')
+            }
+        });
     }
 });
 
