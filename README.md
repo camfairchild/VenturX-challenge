@@ -12,8 +12,43 @@ Should return:
 Then, contenarize the server using Docker and deploy it somewhere (ideally Aws, but anywhere it can be accessed it's fine).  
 You should provide both the link to the deployed instance and a link to the github repo where the solution is stored.  
 
-## Deployment
-TODO: Link to digital ocean deployment
+## Installation
+### Requirements
+- git
+- docker
+
+### pull code from github
+Git clone the repo  
+```shell
+git clone https://github.com/camfairchild/VenturX-challenge.git
+```
+### Build docker image
+Enter the repo locally
+```
+cd VenturX-challenge
+```
+Docker build
+```
+docker build --tag venturx-challenge .
+```
+### Deployment
+Run the container or deploy to the cloud.
+```
+docker run -d -p 80:3000 venturx-challenge
+```
+Access the server from the browser at 
+```
+http://localhost
+```
+### Testing
+Install dependencies, including dev dependencies (mocha/chai)
+```
+npm install
+```
+Run tests
+```
+npm run test
+```
 
 ## Evaluation
 We'll evaluate:
