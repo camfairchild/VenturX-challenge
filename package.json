@@ -1,0 +1,29 @@
+{
+  "name": "VenturX-challenge",
+  "version": "1.0.0",
+  "description": "A coding challenge given by VenturX for their internship program",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "NODE_ENV=test mocha test/*.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camfairchild/VenturX-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camfairchild/VenturX-challenge/issues"
+  },
+  "homepage": "https://github.com/camfairchild/VenturX-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.3.2"
+  }
+}
